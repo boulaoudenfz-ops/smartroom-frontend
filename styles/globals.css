@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-dark:   #4E342E;
+  --brand-coffee: #6D4C41;
+  --brand-sand:   #D7CCC8;
+  --brand-beige:  #EFEBE9;
+  --brand-cream:  #F5F5DC;
+  --brand-gold:   #C8A97E;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-beige text-brand-dark font-sans antialiased;
+  }
+  .dark body {
+    @apply bg-[#1a0f0d] text-brand-sand;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/60 dark:bg-white/5 backdrop-blur-glass border border-brand-sand/40 
+           dark:border-white/10 rounded-2xl shadow-glass;
+  }
+  .stat-card {
+    @apply glass-card p-6 flex flex-col gap-2;
+  }
+  .btn-primary {
+    @apply bg-brand-coffee hover:bg-brand-dark text-white font-medium px-4 py-2 
+           rounded-xl transition-all duration-200 hover:shadow-lg active:scale-95;
+  }
+  .btn-ghost {
+    @apply bg-transparent hover:bg-brand-sand/50 text-brand-coffee font-medium 
+           px-4 py-2 rounded-xl transition-all duration-200;
+  }
+  .input-field {
+    @apply w-full bg-white/70 dark:bg-white/10 border border-brand-sand 
+           dark:border-white/20 rounded-xl px-4 py-2.5 text-sm 
+           focus:outline-none focus:ring-2 focus:ring-brand-gold/50 
+           placeholder:text-brand-sand transition-all;
+  }
+}
